@@ -1,32 +1,23 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Linkedin, Twitter } from "lucide-react"
+import { Card, CardContent } from "@/components/ui/card";
+import { Linkedin, Github } from "lucide-react";
 
 const teamMembers = [
   {
-    name: "Dr. Sarah Chen",
+    name: "Daren Coudriet",
     role: "CEO & Co-Founder",
-    bio: "Former AI researcher at MIT with 15+ years in machine learning and systems architecture.",
-    image: "/placeholder.svg?height=300&width=300",
+    bio: "Tech strategist with decades of experience helping companies adopt and scale emerging technologies, including AI.",
+    image: "/profiles/Daren.jpg",
+    linkedin: "https://www.linkedin.com/in/darencoudriet/",
   },
   {
-    name: "Michael Rodriguez",
+    name: "Javier Pozo",
     role: "CTO & Co-Founder",
-    bio: "Expert in embedded systems and edge computing with a PhD in Computer Engineering.",
-    image: "/placeholder.svg?height=300&width=300",
+    bio: "Penn State CS graduate and AI engineer focused on turning research into real-world products and intelligent tools.",
+    image: "/profiles/Javier.jpg",
+    linkedin: "https://www.linkedin.com/in/javier-pozo-miranda/",
+    github: "https://github.com/JPM2002",
   },
-  {
-    name: "Dr. Aisha Johnson",
-    role: "Head of Research",
-    bio: "Leading AI researcher with 50+ publications in top-tier conferences and journals.",
-    image: "/placeholder.svg?height=300&width=300",
-  },
-  {
-    name: "David Kim",
-    role: "VP of Engineering",
-    bio: "Veteran software architect with experience scaling AI systems for Fortune 500 companies.",
-    image: "/placeholder.svg?height=300&width=300",
-  },
-]
+];
 
 export function Team() {
   return (
@@ -38,11 +29,11 @@ export function Team() {
             Our <span className="gradient-text">Leadership Team</span>
           </h2>
           <p className="text-dacronyx-light/70 max-w-2xl mx-auto">
-            Meet the visionaries and experts driving Dacronyx's mission forward.
+            Meet the visionaries behind Dacronyx—unifying deep AI expertise and product execution.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {teamMembers.map((member, index) => (
             <Card
               key={index}
@@ -51,7 +42,7 @@ export function Team() {
               <CardContent className="p-6 text-center">
                 <div className="w-24 h-24 rounded-full bg-dacronyx-accent/10 mx-auto mb-4 overflow-hidden">
                   <img
-                    src={member.image || "/placeholder.svg"}
+                    src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover"
                   />
@@ -60,8 +51,26 @@ export function Team() {
                 <p className="text-dacronyx-accent2 text-sm mb-3">{member.role}</p>
                 <p className="text-dacronyx-light/70 text-sm mb-4">{member.bio}</p>
                 <div className="flex justify-center space-x-3">
-                  <Linkedin className="h-4 w-4 text-dacronyx-light/50 hover:text-dacronyx-accent2 cursor-pointer transition-colors" />
-                  <Twitter className="h-4 w-4 text-dacronyx-light/50 hover:text-dacronyx-accent2 cursor-pointer transition-colors" />
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${member.name}'s LinkedIn`}
+                    >
+                      <Linkedin className="h-4 w-4 text-dacronyx-light/50 hover:text-dacronyx-accent2 transition-colors" />
+                    </a>
+                  )}
+                  {member.github && (
+                    <a
+                      href={member.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${member.name}'s GitHub`}
+                    >
+                      <Github className="h-4 w-4 text-dacronyx-light/50 hover:text-dacronyx-accent2 transition-colors" />
+                    </a>
+                  )}
                 </div>
               </CardContent>
             </Card>
@@ -69,5 +78,5 @@ export function Team() {
         </div>
       </div>
     </section>
-  )
+  );
 }

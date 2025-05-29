@@ -28,8 +28,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body
+        style={{ colorScheme: "dark" }}
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-dacronyx-dark text-dacronyx-light min-h-screen flex flex-col`}
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>

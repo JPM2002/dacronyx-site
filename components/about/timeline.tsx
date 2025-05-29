@@ -1,35 +1,36 @@
 const milestones = [
   {
-    year: "2019",
-    title: "Company Founded",
-    description: "Dacronyx was established with a vision to bridge AI research and practical implementation.",
+    year: "2025",
+    title: "Dacronyx Founded",
+    description: "Launched with the mission to democratize AI adoption and build practical, real-time AI solutions for businesses.",
   },
   {
-    year: "2020",
-    title: "First Major Client",
-    description: "Successfully deployed our first enterprise AI solution, reducing operational costs by 40%.",
+    year: "2025 Q3",
+    title: "Website + Brand Launch",
+    description: "Released our public brand, initial service offerings, and company website powered by Vercel.",
   },
   {
-    year: "2021",
-    title: "Research Partnership",
-    description: "Established partnerships with leading universities for advanced AI research.",
+    year: "2025 Q4",
+    title: "First Client Projects",
+    description: "Started consulting with our first strategic clients and building MVPs in applied AI.",
   },
   {
-    year: "2022",
-    title: "International Expansion",
-    description: "Expanded operations to serve clients across North America and Europe.",
+    year: "2026",
+    title: "Productization Phase",
+    description: "Internal tools built during consulting engagements will be refined into scalable SaaS offerings.",
   },
   {
-    year: "2023",
-    title: "Innovation Awards",
-    description: "Recognized as 'AI Innovation Company of the Year' by TechCrunch.",
+    year: "2026 Q3",
+    title: "AI Academy Launch",
+    description: "Introduced the first cohort-based AI education program with licensed instructors and real-world projects.",
   },
   {
-    year: "2024",
-    title: "Next Generation Platform",
-    description: "Launched our next-generation AI platform serving Fortune 500 companies.",
+    year: "2027",
+    title: "Global Expansion",
+    description: "Expanded services to Latin America and Canada, partnering with tech hubs and accelerators.",
   },
-]
+];
+
 
 export function Timeline() {
   return (

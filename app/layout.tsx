@@ -1,24 +1,17 @@
 import type React from "react"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 import "./globals.css"
-import { Inter, Space_Grotesk } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-})
+const inter = Inter({ subsets: ["latin"] })
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-})
-
-export const metadata = {
-  title: "Dacronyx | Intelligent AI Solutions",
+export const metadata: Metadata = {
+  title: "Hestia - Automatiza tu hotel, mejora la experiencia de tus huéspedes",
   description:
-    "Dacronyx bridges the gap between high-level machine learning and low-level systems execution, delivering intelligent real-world solutions.",
+    "Plataforma de automatización para hoteles que mejora la comunicación huésped-hotel usando inteligencia artificial.",
+  keywords: "hotel chatbot, automatización para hoteles, asistente IA para huéspedes, comunicación hotelera",
     generator: 'v0.dev'
 }
 
@@ -28,16 +21,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <body
-        style={{ colorScheme: "dark" }}
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-dacronyx-dark text-dacronyx-light min-h-screen flex flex-col`}
-      >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </ThemeProvider>
+    <html lang="es">
+      <body className={inter.className}>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )

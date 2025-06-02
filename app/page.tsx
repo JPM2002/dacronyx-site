@@ -1,15 +1,15 @@
-import { Hero } from "@/components/hero"
-import { Services } from "@/components/services"
-import { Features } from "@/components/features"
-import { Testimonials } from "@/components/testimonials"
-import { CTA } from "@/components/cta"
+import Hero from "@/components/hero"
+import Features from "@/components/features"
+import Solutions from "@/components/solutions-overview"
+import Testimonials from "@/components/testimonials"
+import CTA from "@/components/cta"
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <Hero />
-      <Services />
       <Features />
+      <Solutions />
       <Testimonials />
       <CTA />
     </>
